@@ -1,3 +1,4 @@
+import 'package:alcom/pages/home_page.dart';
 import 'package:alcom/pages/login_page.dart';
 import 'package:alcom/pages/register_page.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
         home: LoginPage(),
         routes: {
           RegisterPage.routeName: (_) => RegisterPage(),
-          LoginPage.routeName: (_) => LoginPage()
+          LoginPage.routeName: (_) => LoginPage(),
+          HomePage.routeName: (_) => HomePage(),
         });
   }
 }

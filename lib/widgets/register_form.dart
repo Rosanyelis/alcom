@@ -12,12 +12,16 @@ class _RegisterFormState extends State<RegisterForm> {
   GlobalKey<FormState> _formKey = GlobalKey();
   String _email = '', _password = '', _username = '';
 
-  _submit() {
+  _submit() async {
     final isOk = _formKey.currentState.validate();
     print("form isOk $isOk");
     if (isOk) {
-      MyAPI myAPI = new MyAPI();
-      myAPI.register(username: _username, email: _email, password: _password);
+      await MyAPI.instance.register(
+        context,
+        username: _username,
+        email: _email,
+        password: _password,
+      );
     }
   }
 
@@ -68,6 +72,7 @@ class _RegisterFormState extends State<RegisterForm> {
               InputText(
                 keyboardType: TextInputType.emailAddress,
                 label: "CONTRASEÑA",
+                obscureText: true,
                 fontSize: responsive.dp(responsive.isTablet ? 1.8 : 2),
                 onChanged: (text) {
                   _password = text;

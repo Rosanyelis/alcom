@@ -1,3 +1,4 @@
+import 'package:alcom/api/my_api.dart';
 import 'package:flutter/material.dart';
 import 'package:alcom/utils/responsive.dart';
 import 'input_text.dart';
@@ -14,7 +15,9 @@ class _LoginFormState extends State<LoginForm> {
   _submit() {
     final isOk = _formKey.currentState.validate();
     print("form isOk $isOk");
-    if (isOk) {}
+    if (isOk) {
+      MyAPI.instance.login(context, email: _email, password: _password);
+    }
   }
 
   @override
