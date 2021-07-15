@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
-const baseUrl = 'https://curso-api-flutter.herokuapp.com';
+const baseUrl = 'https://rosanyelismendoza.alwaysdata.net';
 
 class MyAPI {
   MyAPI._internal();
@@ -28,7 +28,7 @@ class MyAPI {
     try {
       progressDialog.show();
       final Response response = await this._dio.post(
-        '/api/v1/register',
+        '/api/register',
         data: {
           "username": username,
           "email": email,
@@ -71,7 +71,7 @@ class MyAPI {
     try {
       progressDialog.show();
       final Response response = await this._dio.post(
-        '/api/v1/login',
+        '/api/login',
         data: {
           "email": email,
           "password": password,
@@ -118,7 +118,7 @@ class MyAPI {
   Future<dynamic> refresh(String expiredToken) async {
     try {
       final Response response = await this._dio.post(
-            '/api/v1/refresh-token',
+            '/api/refresh-token',
             options: Options(headers: {
               'token': expiredToken,
             }),

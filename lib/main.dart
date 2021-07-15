@@ -1,5 +1,7 @@
+import 'package:alcom/pages/groups_page.dart';
 import 'package:alcom/pages/home_page.dart';
 import 'package:alcom/pages/login_page.dart';
+import 'package:alcom/pages/notifications_page.dart';
 import 'package:alcom/pages/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,6 +22,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
         title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.indigo,
           visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -29,6 +32,8 @@ class MyApp extends StatelessWidget {
           RegisterPage.routeName: (_) => RegisterPage(),
           LoginPage.routeName: (_) => LoginPage(),
           HomePage.routeName: (_) => HomePage(),
+          GroupsPage.routeName: (_) => GroupsPage(),
+          NotificationsPage.routeName: (_) => NotificationsPage(),
         });
   }
 }
